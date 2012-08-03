@@ -18,8 +18,6 @@ $(selector).defaultText({
   def_class : 'default'
 });
 
-Future versions will also support various Input Masks.
-
 change log
 ==========
 
