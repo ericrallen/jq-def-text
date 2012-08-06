@@ -13,13 +13,28 @@ This will help prevent overwriting values that are inserted into the form via PH
 
 It is used like this:
 
-$(selector).defaultText({
+$('#id').iaDefaultText({
   def_text : 'Default Text',
-  def_class : 'default'
+  def_class : 'classname'
 });
 
+<<<<<<< HEAD
+You can also change the default options like this:
+
+$.fn.iaDefaultText.default_settings.def_class = 'def';
+
+DefaultText adds the class 'iadeftext' to the input by default.
+
+You can also get the value for an option like this:
+
+$('#id').iaDefaultText('def_class');
+
+=======
+>>>>>>> 2bd38d64bbdcb0716f6ec231e8311ef1ff0d1ea8
 change log
 ==========
+
+ - 2012-08-05 - Plug-in updated. Now built on the Websanova.com jQuery Plug-In Boilerplate (https://github.com/websanova/boilerplate). Also supports editing default options globally and returning option values.
 
  - 2012-08-03 - Plug-in updated. Also supports addition/removal of default classes and checks to make sure there wasn't a value inserted previously.
 
