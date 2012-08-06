@@ -18,7 +18,6 @@ $('#id').iaDefaultText({
   def_class : 'classname'
 });
 
-<<<<<<< HEAD
 You can also change the default options like this:
 
 $.fn.iaDefaultText.default_settings.def_class = 'def';
@@ -29,8 +28,6 @@ You can also get the value for an option like this:
 
 $('#id').iaDefaultText('def_class');
 
-=======
->>>>>>> 2bd38d64bbdcb0716f6ec231e8311ef1ff0d1ea8
 change log
 ==========
 
