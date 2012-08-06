@@ -45,9 +45,9 @@
 			var $elem = $(this);
 			//check to see if the element is a textbox or textarea
 			if($elem.is('input[type=text]') || $elem.is('textarea')) {
+				var $settings = jQuery.extend(true,{},settings);
 				//check to see if there was a value added to the input already
 				if($elem.val() === '' || $elem.val() === $settings.def_text) {
-					var $settings = jQuery.extend(true,{},settings);
 					var deftext = new DefaultText($settings);
 					//add element to object for later calls
 					deftext.deftext = $elem;
