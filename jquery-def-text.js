@@ -51,7 +51,7 @@
 		return this.each(function() {
 			var $elem = $(this);
 			//check to see if the element is a textbox or textarea
-			if($elem.is('input[type=text]') || $elem.is('textarea')) {
+			if($elem.is('input[type=text]') || $elem.is('textarea') || $elem.is('input[type=email]') || $elem.is('input[type=phone]') || $elem.is('input[type=url') || $elem.is('input[type=search]')) {
 				var $settings = jQuery.extend(true,{},settings);
 				//check to see if there was a value added to the input already
 				if($elem.val() === '' || $elem.val() === $settings.def_text) {
