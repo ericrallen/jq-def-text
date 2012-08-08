@@ -15,6 +15,13 @@
 
 //close out any previous JS with a semi-colon, just in case
 ;(function($) {
+	$(function() {
+		$.support.placeholder = false;
+		test = document.createElement('input');
+		if('placeholder' in test) {
+			$.support.placeholder = true;
+		}
+	});
 	$.fn.iaDefaultText = function(option, settings) {
 		//if DefaultText was called with options
 		if(typeof option === 'object') {
@@ -85,31 +92,39 @@
 			if($this.deftext) {
 				//if the field is empty
 				if($this.deftext.val() === '') {
-					//we want to insert the default value
-					$this.deftext.val($settings.def_text);
+					if($.support.placeholder) {
+						$this.deftext.attr('placeholder',$settings.def_text);
+					} else {
+						//we want to insert the default value
+						$this.deftext.val($settings.def_text);
+						//set the default class
+						$this.deftext.addClass($settings.def_class);
+					}
 				}
-				//set the default class
-				$this.deftext.addClass($settings.def_class);
 			}
 		},
 		on_focus : function() {
-			var $this = this;
-			var $settings = $this.settings;
-			//if the value is the default text
-			if($this.deftext.val() == $settings.def_text) {
-				//remove the text and the default class
-				$this.deftext.val("");
-				$this.deftext.removeClass($settings.def_class);
+			if(!$.support.placeholder) {
+				var $this = this;
+				var $settings = $this.settings;
+				//if the value is the default text
+				if($this.deftext.val() == $settings.def_text) {
+					//remove the text and the default class
+					$this.deftext.val("");
+					$this.deftext.removeClass($settings.def_class);
+				}
 			}
 		},
 		on_blur : function() {
-			var $this = this;
-			var $settings = $this.settings;
-			//if the value is empty
-			if($this.deftext.val() === "") {
-			//insert the default text and add the default class
-				$this.deftext.val($settings.def_text);
-				$this.deftext.addClass($settings.def_class);
+			if(!$.support.placeholder) {
+				var $this = this;
+				var $settings = $this.settings;
+				//if the value is empty
+				if($this.deftext.val() === "") {
+				//insert the default text and add the default class
+					$this.deftext.val($settings.def_text);
+					$this.deftext.addClass($settings.def_class);
+				}
 			}
 		}
 	};

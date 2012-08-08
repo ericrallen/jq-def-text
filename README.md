@@ -3,7 +3,11 @@ jq-def-text
 
 jQuery Default Text
 
-This simple jQuery plug-in allows you to set default text for textboxes that will disappear on focus and return on blur if nothing has been entered in the box.
+This simple jQuery plug-in allows you to set default text for textboxes.
+
+It will check for HTML5 placeholder support and use that if available, and, if it is not available, it will use on focus and on blur to change the value of the textbox if nothing has been entered in the box.
+
+Placeholder text does not currently support the default class functionality.
 
 It can also add and remove a class when the default text is present so you can style it differently.
 
@@ -36,6 +40,8 @@ This plug-in was built based on the Websanova jQuery Plug In Boilerplate <http:/
 
 change log
 ==========
+
+ - 2012-08-08 - Plug-in updated. Added support for HTML5 placeholder text so that developers can specify the text and it will work with the placeholder attribute in supporting browsers, but fall back to the value attribute in other browsers. Placeholder text does not currently support the def_class functionality.
 
  - 2012-08-05 - Plug-in updated. Now built on the Websanova.com jQuery Plug-In Boilerplate (https://github.com/websanova/boilerplate). Also supports editing default options globally and returning option values.
 
