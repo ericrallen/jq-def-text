@@ -88,7 +88,8 @@
 		def_text : '',
 		def_class : 'iadeftext',
 		use_placeholder : true,
-		use_modernizr : true
+		use_modernizr : true,
+		toggle_placeholder : false
 	};
 
 	function DefaultText(settings) {
@@ -125,6 +126,10 @@
 					$this.deftext.val("");
 					$this.deftext.removeClass($settings.def_class);
 				}
+			} else {
+				if($settings.toggle_placeholder) {
+					$this.deftext.attr('placeholder','');
+				}
 			}
 		},
 		on_blur : function() {
@@ -136,6 +141,10 @@
 				//insert the default text and add the default class
 					$this.deftext.val($settings.def_text);
 					$this.deftext.addClass($settings.def_class);
+				}
+			} else {
+				if($settings.toggle_placeholder) {
+					$this.deftext.attr('placeholder',$settings.def_text);
 				}
 			}
 		}

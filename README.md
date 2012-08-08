@@ -11,6 +11,10 @@ By default, placeholder text support is checked via [Modernizr](http://modernizr
 
 	$.fn.iaDefaultText.default_settings.use_modernizr = false;
 
+You can set the placeholder text to toggle off/on like the value add/remove like this:
+
+	$.fn.iaDefaultText.default_settings.toggle_placeholder = true;
+
 You can also disable placeholder text and use the old value adding/removal like this:
 
 	$.fn.iaDefaultText.default_settings.use_placeholder = false;
