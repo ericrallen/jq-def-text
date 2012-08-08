@@ -9,19 +9,12 @@
  * @license					MIT
  * @link					http://github.com/ericrallen/jq-def-text
  * @docs					http://github.com/ericrallen/jq-def-text/blob/master/README.md
- * @version					1.1
+ * @version					1.2
  *
 =====================================================*/
 
 //close out any previous JS with a semi-colon, just in case
 ;(function($) {
-	$(function() {
-		$.support.placeholder = false;
-		test = document.createElement('input');
-		if('placeholder' in test) {
-			$.support.placeholder = true;
-		}
-	});
 	$.fn.iaDefaultText = function(option, settings) {
 		//if DefaultText was called with options
 		if(typeof option === 'object') {
@@ -47,6 +40,23 @@
 		}
 
 		settings = $.extend({}, $.fn.iaDefaultText.default_settings, settings || {});
+		
+		//check to see if html5 placeholder is desired
+		if(settings.use_placeholder) {
+			$.support.placeholder = false;
+			//check to see if we should use modernizr to check for capability
+			if(!settings.use_modernizr) {
+				test = document.createElement('input');
+				if('placeholder' in test) {
+					$.support.placeholder = true;
+				}
+			//if we should
+			} else {
+				if($.Modernizr.input.placeholder) {
+					$.support.placeholder = true;
+				}
+			}
+		}
 
 		return this.each(function() {
 			var $elem = $(this);
@@ -76,7 +86,9 @@
 
 	$.fn.iaDefaultText.default_settings = {
 		def_text : '',
-		def_class : 'iadeftext'
+		def_class : 'iadeftext',
+		use_placeholder : true,
+		use_modernizr : true
 	};
 
 	function DefaultText(settings) {
@@ -92,7 +104,7 @@
 			if($this.deftext) {
 				//if the field is empty
 				if($this.deftext.val() === '') {
-					if($.support.placeholder) {
+					if($.support.placeholder && $settings.use_placeholder) {
 						$this.deftext.attr('placeholder',$settings.def_text);
 					} else {
 						//we want to insert the default value
@@ -104,9 +116,9 @@
 			}
 		},
 		on_focus : function() {
-			if(!$.support.placeholder) {
-				var $this = this;
-				var $settings = $this.settings;
+			var $this = this;
+			var $settings = $this.settings;
+			if(!$.support.placeholder || !$settings.use_placeholder) {
 				//if the value is the default text
 				if($this.deftext.val() == $settings.def_text) {
 					//remove the text and the default class
@@ -116,9 +128,9 @@
 			}
 		},
 		on_blur : function() {
-			if(!$.support.placeholder) {
-				var $this = this;
-				var $settings = $this.settings;
+			var $this = this;
+			var $settings = $this.settings;
+			if(!$.support.placeholder || !$settings.use_placeholder) {
 				//if the value is empty
 				if($this.deftext.val() === "") {
 				//insert the default text and add the default class

@@ -7,6 +7,14 @@ This simple jQuery plug-in allows you to set default text for textboxes.
 
 It will check for HTML5 placeholder support and use that if available, and, if it is not available, it will use on focus and on blur to change the value of the textbox if nothing has been entered in the box.
 
+By default, placeholder text support is checked via [Modernizr](http://modernizr.com/), if you would like to turn it off, use this:
+
+	$.fn.iaDefaultText.default_settings.use_modernizr = false;
+
+You can also disable placeholder text and use the old value adding/removal like this:
+
+	$.fn.iaDefaultText.default_settings.use_placeholder = false;
+
 Placeholder text does not currently support the default class functionality.
 
 It can also add and remove a class when the default text is present so you can style it differently.
@@ -40,6 +48,8 @@ This plug-in was built based on the Websanova jQuery Plug In Boilerplate <http:/
 
 change log
 ==========
+
+ - 2012-08-08 - Plug-in updated. Added ability to toggle placeholder support and to check for placeholder support via Modernizr.
 
  - 2012-08-08 - Plug-in updated. Added support for HTML5 placeholder text so that developers can specify the text and it will work with the placeholder attribute in supporting browsers, but fall back to the value attribute in other browsers. Also added support for several HTML5 input types (phone,email,url,search). Placeholder text does not currently support the def_class functionality.
 
