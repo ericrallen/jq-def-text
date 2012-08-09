@@ -7,6 +7,8 @@ This simple jQuery plug-in allows you to set default text for textboxes.
 
 It will check for HTML5 placeholder support and use that if available, and, if it is not available, it will use on focus and on blur to change the value of the textbox if nothing has been entered in the box.
 
+Check out the [Documentation](https://github.com/ericrallen/jq-def-text/wiki) for more details about configuring jq-def-text.
+
 By default, placeholder text support is checked via [Modernizr](http://modernizr.com/), if you would like to turn it off, use this:
 
 	$.fn.iaDefaultText.default_settings.use_modernizr = false;
