@@ -89,7 +89,8 @@
 		def_class : 'iadeftext',
 		use_placeholder : true,
 		use_modernizr : true,
-		toggle_placeholder : false
+		toggle_placeholder : false,
+		callback : ''
 	};
 
 	function DefaultText(settings) {
@@ -146,6 +147,9 @@
 				if($settings.toggle_placeholder) {
 					$this.deftext.attr('placeholder',$settings.def_text);
 				}
+			}
+			if($settings.callback) {
+				$settings.callback.call(this);
 			}
 		}
 	};

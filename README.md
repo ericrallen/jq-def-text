@@ -1,5 +1,5 @@
-jq-def-text
-===========
+jq-def-text (v1.2)
+==================
 
 jQuery Default Text
 
@@ -19,7 +19,7 @@ You can also disable placeholder text and use the old value adding/removal like 
 
 	$.fn.iaDefaultText.default_settings.use_placeholder = false;
 
-Placeholder text does not currently support the default class functionality.
+HTML5 placeholder text does not support the default class functionality, you can style placeholder text using browser-prefixed styles.
 
 It can also add and remove a class when the default text is present so you can style it differently.
 
@@ -44,6 +44,8 @@ You can also get the value for an option like this:
 
 	$('selector').iaDefaultText('def_class');
 
+There is also a callback function that runs after the blur function. You can specify a global callback using the default_settings, like the examples above, and you can specify a per-selector callback function when defining your options for a selector.
+
 You can check out the JSFiddle for this plug-in and test it and its settings here:
 
 <http://jsfiddle.net/allenericr/bcNkw/>
@@ -53,7 +55,9 @@ This plug-in was built based on the Websanova jQuery Plug In Boilerplate <http:/
 change log
 ==========
 
- - 2012-08-08 - Plug-in updated. Added ability to toggle placeholder support and to check for placeholder support via Modernizr.
+ - 2012-08-08 - Plug-in updated. Added callback function capability to blur event.
+
+ - 2012-08-08 - (v1.2) Plug-in updated. Added ability to toggle placeholder support and to check for placeholder support via Modernizr.
 
  - 2012-08-08 - Plug-in updated. Added support for HTML5 placeholder text so that developers can specify the text and it will work with the placeholder attribute in supporting browsers, but fall back to the value attribute in other browsers. Also added support for several HTML5 input types (phone,email,url,search). Placeholder text does not currently support the def_class functionality.
 
