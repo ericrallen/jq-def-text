@@ -1,4 +1,4 @@
-jq-def-text (v1.2)
+jq-def-text (v1.3)
 ==================
 
 jQuery Default Text
@@ -56,7 +56,9 @@ This plug-in was built based on the Websanova jQuery Plug In Boilerplate <http:/
 
 change log
 ==========
-
+ 
+ - 2012-08-21 - (v1.3) Plug-in updated. Switched focus and blur to be jQuery .on() events.
+ 
  - 2012-08-08 - Plug-in updated. Added callback function capability to blur event.
 
  - 2012-08-08 - (v1.2) Plug-in updated. Added ability to toggle placeholder support and to check for placeholder support via Modernizr.
