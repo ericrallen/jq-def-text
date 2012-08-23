@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>jq-def-text by ericrallen</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/ericrallen/jq-def-text">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/ericrallen/jq-def-text/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/ericrallen/jq-def-text/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>jq-def-text</h1>
+          <p>jQuery Default Text</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/ericrallen">ericrallen</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>jq-def-text</h1>
+
+<h2>Why use jq-def-text?</h2>
+
+<p>jq-def-text aims to provide a simple solution to pre-filling form fields with default values that will take browsers capable of placeholder text and those that aren't into account.</p>
+
+<p>It has a small footprint with a decent amount of functionality so you can configure it to work in whatever way you prefer.</p>
+
+<h2>Example Global Option Configurations</h2>
+
+<p><em>If you want to change some options once and have them carry over to all of your jq-def-text instances, you can configure the global default options and not worry about them again.</em></p>
+
+<ul>
+<li>
+<h3>Change Default Class</h3>
+
+<p><code>//by default jq-def-text applies the class 'iadeftext'</code>
+<code>//you could disable the default class by setting the value to '' if you prefer</code>
+<code>$.fn.iaDefaultText.default_settings.def_class = 'default';</code></p>
+</li>
+<li>
+<h3>Toggle HTML5 Placeholder Text</h3>
+
+<p><code>//by default the html5 placeholder attribute leaves the text in the box until the user types something</code>
+<code>//you can tell it to remove the placeholder on focus and replace it on blur, if you prefer</code>
+<code>$.fn.iaDefaultText.default_settings.toggle_placeholder = true;</code></p>
+</li>
+<li>
+<h3>Turn Off Modernizr HTML5 Placeholder Check</h3>
+
+<p><code>//by default jq-def-text uses Modernizr to check for the placeholder capability</code>
+<code>//if you don't use Modernizr, you can tell jq-def-text to check for the capability on it's own</code>
+<code>$.fn.iaDefaultText.default_settings.use_modernizr = false;</code></p>
+</li>
+<li>
+<h3>Turn Off HTML5 Placeholder Text</h3>
+
+<p><code>//by default jq-def-text uses the html5 placeholder attribute where it can</code>
+<code>//you can tell it not to if you don't like how unruly styling placeholder text can be</code>
+<code>$.fn.iaDefaultText.default_settings.use_placeholder = false;</code></p>
+</li>
+<li>
+<h3>Set a Default Callback Function</h3>
+
+<p><code>//you can tell jq-def-text to run a callback function when the field is blurred</code>
+<code>//you can set a default callback for every field and still override it</code>
+<code>//with a field-specific callback when you initialize a jq-def-text field</code>
+<code>$.fn.iaDefaultText.default_settings.callback = function() {</code>
+<code>//your callback function here</code>
+<code>};</code></p>
+</li>
+</ul><h2>Example Configurations on a Per-Field Basis</h2>
+
+<p><em>Keep in mind you can use any combination of these configurations to tailor jq-def-text to your liking. For our examples, we'll be using an example id selector '#example' but you can use pretty much any selector to call jq-def-text.</em></p>
+
+<ul>
+<li>
+<h3>Default Everything</h3>
+
+<p><code>$('#example').iaDefaultText({</code>
+<code>def_text : 'Your Name'</code>
+<code>});</code></p>
+</li>
+<li>
+<h3>Custom Default Class</h3>
+
+<p><code>$('#example').iaDefaultText({</code>
+<code>def_text : 'Your Name',</code>
+<code>def_class : 'default'</code>
+<code>});</code></p>
+</li>
+<li>
+<h3>Toggle HTML5 Placeholder Text Display on Focus/Blur</h3>
+
+<p><code>$('#example').iaDefaultText({</code>
+<code>def_text : 'Your Name',</code>
+<code>toggle_placeholder : true</code>
+<code>});</code></p>
+</li>
+<li>
+<h3>Don't Use Modernizr to Check HTML5 Placeholder Text Functionality</h3>
+
+<p><code>$('#example').iaDefaultText({</code>
+<code>def_text : 'Your Name',</code>
+<code>use_modernizr : false</code>
+<code>});</code></p>
+</li>
+<li>
+<h3>Don't Use HTML5 Placeholder Text</h3>
+
+<p><code>$('#example').iaDefaultText({</code>
+<code>def_text : 'Your Name',</code>
+<code>use_placeholder : false</code>
+<code>});</code></p>
+</li>
+<li>
+<h3>Trigger Callback Function on Blur</h3>
+
+<p><code>$('#example').iaDefaultText({</code>
+<code>def_text : 'Your Name',</code>
+<code>callback : function() {</code>
+<code>//your function here</code>
+<code>}</code>
+<code>});</code></p>
+</li>
+</ul>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-34284330-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
