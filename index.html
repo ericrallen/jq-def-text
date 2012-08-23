@@ -1,33 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>jq-def-text by ericrallen</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="jq-def-text : jQuery Default Text" />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>jq-def-text</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>jq-def-text</h1>
-        <p>jQuery Default Text</p>
 
-        <p class="view"><a href="https://github.com/ericrallen/jq-def-text">View the Project on GitHub <small>ericrallen/jq-def-text</small></a></p>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ericrallen/jq-def-text">View on GitHub</a>
 
+          <h1 id="project_title">jq-def-text</h1>
+          <h2 id="project_tagline">jQuery Default Text</h2>
 
-        <ul>
-          <li><a href="https://github.com/ericrallen/jq-def-text/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/ericrallen/jq-def-text/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/ericrallen/jq-def-text">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ericrallen/jq-def-text/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ericrallen/jq-def-text/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h1>jq-def-text</h1>
 
 <h2>Why use jq-def-text?</h2>
@@ -44,40 +47,45 @@
 <li>
 <h3>Change Default Class</h3>
 
-<p><code>//by default jq-def-text applies the class 'iadeftext'</code>
-<code>//you could disable the default class by setting the value to '' if you prefer</code>
-<code>$.fn.iaDefaultText.default_settings.def_class = 'default';</code></p>
+<div class="highlight"><pre><span class="c1">//by default jq-def-text applies the class 'iadeftext'</span>
+<span class="c1">//you could disable the default class by setting the value to '' if you prefer</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">iaDefaultText</span><span class="p">.</span><span class="nx">default_settings</span><span class="p">.</span><span class="nx">def_class</span> <span class="o">=</span> <span class="s1">'default'</span><span class="p">;</span>
+</pre></div>
 </li>
 <li>
 <h3>Toggle HTML5 Placeholder Text</h3>
 
-<p><code>//by default the html5 placeholder attribute leaves the text in the box until the user types something</code>
-<code>//you can tell it to remove the placeholder on focus and replace it on blur, if you prefer</code>
-<code>$.fn.iaDefaultText.default_settings.toggle_placeholder = true;</code></p>
+<div class="highlight"><pre><span class="c1">//by default the html5 placeholder attribute leaves the text in the box until the user types something</span>
+<span class="c1">//you can tell it to remove the placeholder on focus and replace it on blur, if you prefer</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">iaDefaultText</span><span class="p">.</span><span class="nx">default_settings</span><span class="p">.</span><span class="nx">toggle_placeholder</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</pre></div>
 </li>
 <li>
 <h3>Turn Off Modernizr HTML5 Placeholder Check</h3>
 
-<p><code>//by default jq-def-text uses Modernizr to check for the placeholder capability</code>
-<code>//if you don't use Modernizr, you can tell jq-def-text to check for the capability on it's own</code>
-<code>$.fn.iaDefaultText.default_settings.use_modernizr = false;</code></p>
+<div class="highlight"><pre><span class="c1">//by default jq-def-text uses Modernizr to check for the placeholder capability</span>
+<span class="c1">//if you don't use Modernizr, you can tell jq-def-text to check for the capability on it's own</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">iaDefaultText</span><span class="p">.</span><span class="nx">default_settings</span><span class="p">.</span><span class="nx">use_modernizr</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
 </li>
 <li>
 <h3>Turn Off HTML5 Placeholder Text</h3>
 
-<p><code>//by default jq-def-text uses the html5 placeholder attribute where it can</code>
-<code>//you can tell it not to if you don't like how unruly styling placeholder text can be</code>
-<code>$.fn.iaDefaultText.default_settings.use_placeholder = false;</code></p>
+<div class="highlight"><pre><span class="c1">//by default jq-def-text uses the html5 placeholder attribute where it can</span>
+<span class="c1">//you can tell it not to if you don't like how unruly styling placeholder text can be</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">iaDefaultText</span><span class="p">.</span><span class="nx">default_settings</span><span class="p">.</span><span class="nx">use_placeholder</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
 </li>
 <li>
 <h3>Set a Default Callback Function</h3>
 
-<p><code>//you can tell jq-def-text to run a callback function when the field is blurred</code>
-<code>//you can set a default callback for every field and still override it</code>
-<code>//with a field-specific callback when you initialize a jq-def-text field</code>
-<code>$.fn.iaDefaultText.default_settings.callback = function() {</code>
-<code>//your callback function here</code>
-<code>};</code></p>
+<div class="highlight"><pre><span class="c1">//you can tell jq-def-text to run a callback function when the field is blurred</span>
+<span class="c1">//you can set a default callback for every field and still override it</span>
+<span class="c1">//with a field-specific callback when you initialize a jq-def-text field</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">iaDefaultText</span><span class="p">.</span><span class="nx">default_settings</span><span class="p">.</span><span class="nx">callback</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//your callback function here</span>
+<span class="p">};</span>
+</pre></div>
 </li>
 </ul><h2>Example Configurations on a Per-Field Basis</h2>
 
@@ -87,60 +95,70 @@
 <li>
 <h3>Default Everything</h3>
 
-<p><code>$('#example').iaDefaultText({</code>
-<code>def_text : 'Your Name'</code>
-<code>});</code></p>
+<div class="highlight"><pre>    <span class="nx">$</span><span class="p">(</span><span class="s1">'#example'</span><span class="p">).</span><span class="nx">iaDefaultText</span><span class="p">({</span>
+    <span class="nx">def_text</span> <span class="o">:</span> <span class="s1">'Your Name'</span>
+<span class="p">});</span>
+</pre></div>
 </li>
 <li>
 <h3>Custom Default Class</h3>
 
-<p><code>$('#example').iaDefaultText({</code>
-<code>def_text : 'Your Name',</code>
-<code>def_class : 'default'</code>
-<code>});</code></p>
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#example'</span><span class="p">).</span><span class="nx">iaDefaultText</span><span class="p">({</span>
+    <span class="nx">def_text</span> <span class="o">:</span> <span class="s1">'Your Name'</span><span class="p">,</span>
+    <span class="nx">def_class</span> <span class="o">:</span> <span class="s1">'default'</span>
+<span class="p">});</span>
+</pre></div>
 </li>
 <li>
 <h3>Toggle HTML5 Placeholder Text Display on Focus/Blur</h3>
 
-<p><code>$('#example').iaDefaultText({</code>
-<code>def_text : 'Your Name',</code>
-<code>toggle_placeholder : true</code>
-<code>});</code></p>
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#example'</span><span class="p">).</span><span class="nx">iaDefaultText</span><span class="p">({</span>
+    <span class="nx">def_text</span> <span class="o">:</span> <span class="s1">'Your Name'</span><span class="p">,</span>
+    <span class="nx">toggle_placeholder</span> <span class="o">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+</pre></div>
 </li>
 <li>
 <h3>Don't Use Modernizr to Check HTML5 Placeholder Text Functionality</h3>
 
-<p><code>$('#example').iaDefaultText({</code>
-<code>def_text : 'Your Name',</code>
-<code>use_modernizr : false</code>
-<code>});</code></p>
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#example'</span><span class="p">).</span><span class="nx">iaDefaultText</span><span class="p">({</span>
+    <span class="nx">def_text</span> <span class="o">:</span> <span class="s1">'Your Name'</span><span class="p">,</span>
+    <span class="nx">use_modernizr</span> <span class="o">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+</pre></div>
 </li>
 <li>
 <h3>Don't Use HTML5 Placeholder Text</h3>
 
-<p><code>$('#example').iaDefaultText({</code>
-<code>def_text : 'Your Name',</code>
-<code>use_placeholder : false</code>
-<code>});</code></p>
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#example'</span><span class="p">).</span><span class="nx">iaDefaultText</span><span class="p">({</span>
+    <span class="nx">def_text</span> <span class="o">:</span> <span class="s1">'Your Name'</span><span class="p">,</span>
+    <span class="nx">use_placeholder</span> <span class="o">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+</pre></div>
 </li>
 <li>
 <h3>Trigger Callback Function on Blur</h3>
 
-<p><code>$('#example').iaDefaultText({</code>
-<code>def_text : 'Your Name',</code>
-<code>callback : function() {</code>
-<code>//your function here</code>
-<code>}</code>
-<code>});</code></p>
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#example'</span><span class="p">).</span><span class="nx">iaDefaultText</span><span class="p">({</span>
+    <span class="nx">def_text</span> <span class="o">:</span> <span class="s1">'Your Name'</span><span class="p">,</span>
+    <span class="nx">callback</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">//your function here</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
 </li>
 </ul>
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/ericrallen">ericrallen</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">jq-def-text maintained by <a href="https://github.com/ericrallen">ericrallen</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -151,6 +169,7 @@
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
+
 
   </body>
 </html>
