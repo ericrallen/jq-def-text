@@ -12,6 +12,8 @@ Check out the [Documentation](https://github.com/ericrallen/jq-def-text/wiki) fo
 By default, placeholder text support is checked via [Modernizr](http://modernizr.com/), if you would like to turn it off, use this:
 
 	$.fn.iaDefaultText.default_settings.use_modernizr = false;
+	
+Note: using Modernizr requires that Modernizr be configured to check inputs.
 
 You can set the placeholder text to toggle off/on like the value add/remove like this:
 
