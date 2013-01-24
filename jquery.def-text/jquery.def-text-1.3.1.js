@@ -148,7 +148,7 @@
 					$this.deftext.attr('placeholder',$settings.def_text);
 				}
 			}
-			if($settings.callback) {
+			if($settings.callback && typeof $settings.callback === 'function') {
 				$settings.callback.call(this);
 			}
 		}
