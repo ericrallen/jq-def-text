@@ -1,4 +1,4 @@
-jq-def-text (v1.3)
+jq-def-text (v1.3.1)
 ==================
 
 jQuery Default Text
@@ -9,23 +9,23 @@ It will check for HTML5 placeholder support and use that if available, and, if i
 
 Check out the [Documentation](https://github.com/ericrallen/jq-def-text/wiki) for more details about configuring jq-def-text.
 
-By default, placeholder text support is checked via [Modernizr](http://modernizr.com/), if you would like to turn it off, use this:
+By default, placeholder text support isn't checked via [Modernizr](http://modernizr.com/), if you would like to turn it on, use this:
 
-	$.fn.iaDefaultText.default_settings.use_modernizr = false;
+	$.fn.iaDefaultText.default_settings.use_modernizr = true;
 	
-Note: using Modernizr requires that Modernizr be configured to check inputs.
+Note: using Modernizr requires that the version of Modernizr you are using is configured to check inputs.
 
-You can set the placeholder text to toggle off/on like the value add/remove like this:
+You can set the placeholder text to toggle off/on like the way values are added/removed like this:
 
 	$.fn.iaDefaultText.default_settings.toggle_placeholder = true;
 
-You can also disable placeholder text and use the old value adding/removal like this:
+You can also disable placeholder text and use value adding/removal like this:
 
 	$.fn.iaDefaultText.default_settings.use_placeholder = false;
 
-HTML5 placeholder text does not support the default class functionality, you can style placeholder text using browser-prefixed styles.
-
 It can also add and remove a class when the default text is present so you can style it differently.
+
+HTML5 placeholder text does not currently support the default class functionality, you can style placeholder text using browser-prefixed styles.
 
 It checks for an already present value in the specified field and will ignore that field's default value and default class if a value is found.
 
@@ -34,8 +34,8 @@ This will help prevent overwriting values that are inserted into the form via PH
 It is used like this:
 
 	$('selector').iaDefaultText({
-  		def_text : 'Default Text',
-  		def_class : 'classname'
+		def_text : 'Default Text',
+		def_class : 'classname'
 	});
 
 You can also change the default options like this:
@@ -59,6 +59,8 @@ This plug-in was built based on the Websanova jQuery Plug In Boilerplate <http:/
 change log
 ==========
  
+ - 2013-01-24 - (v1.3.1) Plug-in updated. Switched Modernizr check to defaul to false. Updated README.md. Updated file naming conventions.
+
  - 2012-08-21 - (v1.3) Plug-in updated. Switched focus and blur to be jQuery .on() events.
  
  - 2012-08-08 - Plug-in updated. Added callback function capability to blur event.
