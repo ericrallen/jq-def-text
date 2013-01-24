@@ -28,7 +28,7 @@
         </ul>
       </header>
       <section>
-        <h1>jq-def-text</h1>
+        <h1>jq-def-text v1.3.1</h1>
 
 <h2>Why use jq-def-text?</h2>
 
@@ -58,11 +58,11 @@
 </pre></div>
 </li>
 <li>
-<h3>Turn Off Modernizr HTML5 Placeholder Check</h3>
+<h3>Turn On Modernizr HTML5 Placeholder Check</h3>
 
 <div class="highlight"><pre><span class="c1">//by default jq-def-text uses Modernizr to check for the placeholder capability</span>
-<span class="c1">//if you don't use Modernizr, you can tell jq-def-text to check for the capability on it's own</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">iaDefaultText</span><span class="p">.</span><span class="nx">default_settings</span><span class="p">.</span><span class="nx">use_modernizr</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="c1">//if you want to use Modernizr to check for browser placeholder functionality, you can tell jq-def-text to check for the capability on it's own. This requires that the build of Modernizr you are using is configured to check input capabilities.</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">iaDefaultText</span><span class="p">.</span><span class="nx">default_settings</span><span class="p">.</span><span class="nx">use_modernizr</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 </pre></div>
 </li>
 <li>
