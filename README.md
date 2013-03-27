@@ -118,6 +118,8 @@ The idea for the lingering placeholders was inspired by this article <http://css
 change log
 ==========
  
+ - 2013-03-27 - (v1.4.2) Fixed title in jQuery plug-in repo.
+ 
  - 2013-03-27 - (v1.4.1) Converted to jQuery plug-in site's naming regulations and added *jquery.json file.
 
  - 2013-03-27 - (v1.4.0) Added ability to have values and placeholders stay visible for a period of time (defined in miliseconds). Added class addition/removal to placeholder-enabled fields. Added destroy method to allow removal of jq-def-text from an element. Updated README.md. Added comment header to minified file.
