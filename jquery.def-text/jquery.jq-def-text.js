@@ -11,7 +11,7 @@
  * @site					http://ericrallen.github.com/jq-def-text/
  * @repo					http://github.com/ericrallen/jq-def-text/
  * @docs					https://github.com/ericrallen/jq-def-text/wiki/
- * @version					1.4.1
+ * @version					1.4.2
  *
 =====================================================*/
 

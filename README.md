@@ -1,4 +1,4 @@
-jq-def-text (v1.4.1)
+jq-def-text (v1.4.2)
 ==================
 
 ###jQuery Default Text
