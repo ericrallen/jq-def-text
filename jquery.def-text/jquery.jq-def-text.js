@@ -11,20 +11,20 @@
  * @site					http://ericrallen.github.com/jq-def-text/
  * @repo					http://github.com/ericrallen/jq-def-text/
  * @docs					https://github.com/ericrallen/jq-def-text/wiki/
- * @version					1.4.0
+ * @version					1.4.1
  *
 =====================================================*/
 
 //close out any previous JS with a semi-colon, just in case
 ;(function($, window, document, undefined) {
-	$.fn.iaDefaultText = function(option, settings) {
+	$.fn.ia_jqdeftext = function(option, settings) {
 		//if DefaultText was called with options
 		if(typeof option === 'object') {
 			settings = option;
 		//if DefaultText was called with an option name
 		} else if(typeof option === 'string') {
 			//create a var to store the def-text instance for this element
-			var instance = this.data('_iaDefaultText');
+			var instance = this.data('_ia_jqdeftext');
 
 			//if there was no def-text instance, don't do anything
 			if(!instance) {
@@ -39,7 +39,7 @@
 				//if the string wasn't a predefined method option
 				} else {
 					//make sure this option exists
-					if($.fn.iaDefaultText.default_settings[option] !== undefined) {
+					if($.fn.ia_jqdeftext.default_settings[option] !== undefined) {
 						//if a value was passed with the option
 						if(settings !== undefined) {
 							//set the value for the specified option
@@ -58,7 +58,7 @@
 			}
 		}
 
-		settings = $.extend({}, $.fn.iaDefaultText.default_settings, settings || {});
+		settings = $.extend({}, $.fn.ia_jqdeftext.default_settings, settings || {});
 
 		//check to see if html5 placeholder is desired
 		if(settings.use_placeholder) {
@@ -119,13 +119,13 @@
 					);
 
 					//store our def-text object in a data attribute
-					$elem.data('_iaDefaultText', deftext);
+					$elem.data('_ia_jqdeftext', deftext);
 				}
 			}
 		});
 	};
 
-	$.fn.iaDefaultText.default_settings = {
+	$.fn.ia_jqdeftext.default_settings = {
 		def_text : '',					//the text to display
 		def_class : 'iadeftext',		//the class to apply when default text is visible
 		use_placeholder : true,			//try to use placeholder if available
@@ -367,7 +367,7 @@
 				$this.deftext.removeClass(settings.def_class);
 
 				//remove associated data attribute
-				$this.deftext.removeData('_iaDefaultText');
+				$this.deftext.removeData('_ia_jqdeftext');
 
 				//get element id
 				var id = '#' + $this.deftext.attr('id');

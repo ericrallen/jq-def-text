@@ -1,0 +1,35 @@
+{
+    "name": "jq-def-text",
+    "title": "jQuery Default Text",
+    "description": "jQuery plugin for bridging the gap between html5 placeholder capable browsers and older browsers.",
+    "keywords": [
+        "default text",
+        "placeholder"
+    ],
+    "version": "1.4.0",
+    "author": {
+        "name": "Eric Allen",
+        "email": "decoy@internetalche.me",
+        "url": "https://github.com/ericrallen/"
+    },
+    "maintainers": [
+        {
+            "name": "Eric Allen",
+            "email": "decoy@internetalche.me",
+            "url": "https://github.com/ericrallen/"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/ericrallen/jq-def-text/blob/master/jquery.def-text/license.txt"
+        }
+    ],
+    "bugs": "https://github.com/ericrallen/jq-def-text/issues",
+    "homepage": "https://github.com/ericrallen/jq-def-text",
+    "docs": "https://github.com/ericrallen/jq-def-text",
+    "download": "https://github.com/ericrallen/jq-def-text/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.7.2"
+    }
+}
