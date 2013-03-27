@@ -3,10 +3,12 @@
     "title": "jQuery Default Text",
     "description": "jQuery plugin for bridging the gap between html5 placeholder capable browsers and older browsers.",
     "keywords": [
-        "default text",
-        "placeholder"
+        "default",
+        "placeholder",
+        "input",
+        "textarea"
     ],
-    "version": "1.4.0",
+    "version": "1.4.1",
     "author": {
         "name": "Eric Allen",
         "email": "decoy@internetalche.me",
