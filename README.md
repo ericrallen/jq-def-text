@@ -118,7 +118,7 @@ The idea for the lingering placeholders was inspired by this article <http://css
 change log
 ==========
 
- - 2013-04-25 - (v1.4.3) Switched password fields to not fill in unless Placeholder is supported.
+ - 2013-04-25 - (v1.4.3) Switched password fields to not fill in unless placeholder is supported and being used. Updated comment header to keep smaller header when JS is minified.
 
  - 2013-03-27 - (v1.4.2) Fixed title in jQuery plug-in repo.
  

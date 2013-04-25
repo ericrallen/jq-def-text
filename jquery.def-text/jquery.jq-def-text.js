@@ -93,28 +93,33 @@
 			//cache element selector
 			var $elem = $(this);
 
+			var go_ahead = false;
+
 			//check to see if the element is a text input or textarea
-			if($elem.is('input[type=text]') || $elem.is('textarea') || $elem.is('input[type=email]') || $elem.is('input[type=phone]') || $elem.is('input[type=url]') || $elem.is('input[type=search]') || $elem.is('input[type=password]')) {
-				var $settings = jQuery.extend(true,{},settings);
+			if($elem.is('input') || $elem.is('textarea')) {
+				if($elem.is('input')) {
+					var type = $elem.attr('type');
+					if(type == 'text' || type == 'email' || type == 'phone' || type == 'url' || type == 'search' || type == 'password') {
+						go_ahead = true;
+					}
+				} else {
+					go_ahead = true;
+				}
+			}
+
+			if(go_ahead) {
+
+				var $settings = jQuery.extend(true, {}, settings);
 
 				//check to see if there was a value added to the input already
 				if($elem.val() === '' || $elem.val() === $settings.def_text) {
 					var deftext = new DefaultText($settings);
 
-					//add element to object for later calls
-					deftext.deftext = $elem;
-
-					//get element id
-					var id = '#' + $elem.attr('id');
-
-					//initialize deftext
-					deftext.initialize();
-
 					//initialize variable for checking whether we should bind our events
 					var bind_event;
 
 					//don't bind the events if this is a password field and we aren't supporting placeholders
-					if($elem.is('input[type=password') && !this.using_placeholders()) {
+					if($elem.is('input') && $elem.attr('type') == 'password' && !deftext.using_placeholders()) {
 						bind_event = false;
 					} else {
 						bind_event = true;
@@ -122,6 +127,16 @@
 
 					//if it's okay to bind the event
 					if(bind_event) {
+
+						//add element to object for later calls
+						deftext.deftext = $elem;
+
+						//get element id
+						var id = '#' + $elem.attr('id');
+
+						//initialize deftext
+						deftext.initialize();
+
 						//when the field gets focus
 						$('body').on(
 							'focusin.ia_deftext',
@@ -137,12 +152,15 @@
 								deftext.on_blur();
 							}
 						);
+
+						//store def-text object in a data attribute
+						$elem.data('_ia_jqdeftext', deftext);
 					}
 
-					//store def-text object in a data attribute
-					$elem.data('_ia_jqdeftext', deftext);
 				}
+
 			}
+
 		});
 	};
 
