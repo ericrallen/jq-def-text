@@ -1,3 +1,11 @@
+/*!
+* jq-def-text v1.4.3
+* http://github.com/ericrallen/jq-def-text/
+*
+* Copyright 2012 Eric Allen
+* Released under the MIT license
+*/
+
 /*=====================================================
  *
  * InternetAlche.me
@@ -11,7 +19,7 @@
  * @site					http://ericrallen.github.com/jq-def-text/
  * @repo					http://github.com/ericrallen/jq-def-text/
  * @docs					https://github.com/ericrallen/jq-def-text/wiki/
- * @version					1.4.2
+ * @version					1.4.3
  *
 =====================================================*/
 
@@ -102,23 +110,36 @@
 					//initialize deftext
 					deftext.initialize();
 
-					//when the field gets focus
-					$('body').on(
-						'focusin.ia_deftext',
-						id,
-						function() {
-							deftext.on_focus();
-						}
-					//when the field gets blur
-					).on(
-						'focusout.ia_deftext',
-						id,
-						function() {
-							deftext.on_blur();
-						}
-					);
+					//initialize variable for checking whether we should bind our events
+					var bind_event;
 
-					//store our def-text object in a data attribute
+					//don't bind the events if this is a password field and we aren't supporting placeholders
+					if($elem.is('input[type=password') && !this.using_placeholders()) {
+						bind_event = false;
+					} else {
+						bind_event = true;
+					}
+
+					//if it's okay to bind the event
+					if(bind_event) {
+						//when the field gets focus
+						$('body').on(
+							'focusin.ia_deftext',
+							id,
+							function() {
+								deftext.on_focus();
+							}
+						//when the field gets blurred
+						).on(
+							'focusout.ia_deftext',
+							id,
+							function() {
+								deftext.on_blur();
+							}
+						);
+					}
+
+					//store def-text object in a data attribute
 					$elem.data('_ia_jqdeftext', deftext);
 				}
 			}
